@@ -15,6 +15,10 @@ our @EXPORT_OK = qw(
 
 sub pad {
     my ($text, $width, $which, $padchar, $is_trunc) = @_;
+    
+    # switch this off: Negative repeat count does nothing at C:/Strawberry/perl/site/lib/String/Pad.pm line 35.
+    no warnings 'numeric';
+    
     if ($which) {
         $which = substr($which, 0, 1);
     } else {
