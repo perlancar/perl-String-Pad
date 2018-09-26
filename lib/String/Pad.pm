@@ -45,12 +45,16 @@ sub pad {
 
 =head2 pad($text, $width[, $which[, $padchar[, $truncate]]]) => STR
 
-Return C<$text> padded with C<$padchar> to C<$width> columns. C<$which> is
-either "r" or "right" for padding on the right (the default if not specified),
-"l" or "left" for padding on the right, or "c" or "center" or "centre" for
-left+right padding to center the text.
+Return C<$text> padded with C<$padchar> to C<$width> columns.
+
+C<$which> is either "r" or "right" for padding on the right (the default if not
+specified), "l" or "left" for padding on the right, or "c" or "center" or
+"centre" for left+right padding to center the text.
 
 C<$padchar> is whitespace if not specified. It should be string having the width
 of 1 column.
+
+C<$truncate> is boolean. When set to 1, then text will be truncated when it is
+longer than C<$width>.
 
 =cut
