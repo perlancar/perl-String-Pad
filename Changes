@@ -1,3 +1,10 @@
+0.020   2018-09-26 (PERLANCAR)
+
+        - No functional changes.
+
+	- [doc] Document $truncate argument.
+
+
 0.01    2014-12-10 (PERLANCAR)
 
         - First release. Split from SHARYANTO-String-Util.
