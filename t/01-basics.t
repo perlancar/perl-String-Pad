@@ -17,7 +17,13 @@ subtest "pad" => sub {
     is(pad("1234", 6, "c", "x"), "x1234x", "padchar");
     is(pad("1234", 1), "1234", "trunc=0");
     is(pad("1234", 1, undef, undef, 1), "1", "trunc=1");
+
+    subtest "multiple strings" => sub {
+        is_deeply(pad(["1234", "12", "12345"]), ["1234 ", "12   ", "12345"]);
+        is_deeply(pad(["1234", "12", "12345"], 6), ["1234  ", "12    ", "12345 "]);
+        is_deeply(pad(["1234", "12", "12345"], 2, undef, undef, 1), ["12", "12", "12"]);
+    };
 };
 
 DONE_TESTING:
-done_testing();
+done_testing;
