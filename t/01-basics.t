@@ -7,6 +7,7 @@ use Test2::Bundle::More;
 
 use String::Pad qw(
                       pad
+                      pad_numbers
               );
 
 subtest "pad" => sub {
@@ -23,6 +24,32 @@ subtest "pad" => sub {
         is_deeply(pad(["1234", "12", "12345"], 6), ["1234  ", "12    ", "12345 "]);
         is_deeply(pad(["1234", "12", "12345"], 2, undef, undef, 1), ["12", "12", "12"]);
     };
+};
+
+subtest "pad_numbers" => sub {
+    my $numbers = [
+        "1",
+        "-20",
+        "3.1",
+        "-400.56",
+        "5e1",
+        "6.78e02",
+        "-7.8e-10",
+        "Inf",
+        "NaN",
+    ];
+
+    is_deeply(pad_numbers($numbers), [
+        "   1      ",
+        " -20      ",
+        "   3.1    ",
+        "-400.56   ",
+        "   5e1    ",
+        "   6.78e02",
+        "  -7.8e-10",
+        " Inf      ",
+        " NaN      ",
+    ]);
 };
 
 DONE_TESTING:
