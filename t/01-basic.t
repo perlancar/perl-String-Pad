@@ -7,8 +7,8 @@ use Test2::Bundle::More;
 
 use String::Pad qw(
                       pad
-                      pad_numbers
               );
+                      #pad_numbers
 
 subtest "pad" => sub {
     is(pad("1234", 4), "1234");
@@ -26,6 +26,7 @@ subtest "pad" => sub {
     };
 };
 
+if (0) {
 subtest "pad_numbers" => sub {
     my $numbers = [
         "1",
@@ -51,6 +52,7 @@ subtest "pad_numbers" => sub {
         " NaN      ",
     ]);
 };
+} # if 0
 
 DONE_TESTING:
 done_testing;
