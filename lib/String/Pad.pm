@@ -104,4 +104,15 @@ of 1 column.
 C<$truncate> is boolean. When set to 1, then text will be truncated when it is
 longer than C<$width>.
 
+
+=head1 SEE ALSO
+
+Other string padding modules: L<Text::Padding>, L<Text::WideChar::Util> (for
+strings that contain wide Unicode characters), L<Text::ANSI::Util> (for strings
+that contain ANSI color codes), L<Text::ANSIWide::Util> (for strings that
+contain both ANSI color codes and wide Unicode characters).
+
+Other alignment modules: L<Number::Pad> (for padding numbers so that the decimal
+points align).
+
 =cut
