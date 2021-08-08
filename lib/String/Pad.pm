@@ -42,13 +42,13 @@ sub pad {
             $w = $width;
         } else {
             if ($which eq 'l') {
-                no warnings; # negative repeat count
+                no warnings 'numeric'; # negative repeat count
                 $text = ($padchar x ($width-$w)) . $text;
             } elsif ($which eq 'c') {
                 my $n = int(($width-$w)/2);
                 $text = ($padchar x $n) . $text . ($padchar x ($width-$w-$n));
             } else {
-                no warnings; # negative repeat count
+                no warnings 'numeric'; # negative repeat count
                 $text .= ($padchar x ($width-$w));
             }
         }
